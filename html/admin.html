@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador | Simulacros</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <h2>Admin</h2>
+    <nav>
+        <a href="admin.html" class="active">📊 Simulacros</a>
+        <a href="admin_estudiantes.html">👨‍🎓 Estudiantes</a>
+        <a href="admin_grupo_preguntas.html">📝 Grupos de preguntas</a>
+        <a href="admin_funciones_admin.html">⚙️ Funciones admin</a>
+        <a href="#">✉️ Enviar resultados</a>
+    </nav>
+</aside>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- HEADER -->
+    <header class="admin-header">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <h1>Panel de Simulacros</h1>
+        <button class="btn-primary" onclick="openModal()">+ Nuevo simulacro</button>
+    </header>
+
+    <!-- TABLA -->
+    <section class="admin-section">
+        <h2>Simulacros realizados</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Fecha</th>
+                        <th>Promedio</th>
+                        <th>Tiempo promedio</th>
+                        <th>Estado</th>
+                        <th>Ver</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Simulacro ICFES #1</td>
+                        <td>2026-01-10</td>
+                        <td>68</td>
+                        <td>3h 10m</td>
+                        <td class="active">Resultados</td>
+                        <td><button class="btn-view">📊</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Simulacro ICFES #2</td>
+                        <td>2026-01-18</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td class="inactive">Pendiente</td>
+                        <td><button class="btn-view">📊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ESTADÍSTICAS -->
+    <section class="admin-section">
+        <h2>Estadísticas generales</h2>
+
+        <div class="charts-grid">
+            <div class="chart-box"><canvas id="radarSimulacro"></canvas></div>
+            <div class="chart-box"><canvas id="pieEstado"></canvas></div>
+            <div class="chart-box"><canvas id="barPromedios"></canvas></div>
+        </div>
+    </section>
+
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Nuevo simulacro</h3>
+
+        <input type="text" placeholder="Nombre del simulacro">
+        <input type="date">
+
+        <select>
+            <option>Grupo de preguntas</option>
+            <option>Grupo A</option>
+            <option>Grupo B</option>
+            <option>Grupo C</option>
+        </select>
+
+        <button class="btn-primary full">Guardar simulacro</button>
+    </div>
+</div>
+
+<script src="../js/admin.js"></script>
+</body>
+</html>

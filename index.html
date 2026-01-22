@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preicfes Gratuito para Jóvenes</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <img src="img/logo.png" alt="Logo" class="nav-logo">
+
+            <div class="nav-buttons">
+                <a href="html/login.html" class="btn-login">Iniciar sesión</a>
+                <a href="html/register.html" class="btn-register">Registrarse</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO / LANDING -->
+    <header class="hero">
+        <div class="hero-content">
+            <img src="img/logo.png" alt="Preicfes Logo" class="logo">
+
+            <h1>Preicfes gratuito para jóvenes</h1>
+            <p class="subtitle">
+                Creemos en el poder transformador del conocimiento
+            </p>
+
+            <a href="https://linktr.ee/preicfesjovenesbogota" target="_blank" class="btn-primary">
+                Inscríbete
+            </a>
+        </div>
+    </header>
+
+    <!-- QUIÉNES SOMOS -->
+    <section class="section about reveal">
+        <h2>¿Quiénes somos?</h2>
+        <p>
+            Preicfes Gratuito es una iniciativa social que busca preparar a jóvenes
+            para las pruebas Saber 11, brindando acceso gratuito a educación de calidad,
+            acompañamiento académico y orientación vocacional.
+        </p>
+    </section>
+
+    <!-- INSTAGRAM -->
+    <section class="section instagram reveal">
+        <h2>Síguenos en Instagram</h2>
+
+        <div class="instagram-grid">
+            <img src="img/insta1.png" onclick="openInstagram()" alt="Instagram 1" class="reveal">
+            <img src="img/insta2.png" onclick="openInstagram()" alt="Instagram 2" class="reveal">
+            <img src="img/insta3.png" onclick="openInstagram()" alt="Instagram 3" class="reveal">
+            <img src="img/insta4.png" onclick="openInstagram()" alt="Instagram 4" class="reveal">
+        </div>
+    </section>
+
+    <!-- CAUSA -->
+    <section class="section cause reveal">
+        <h2>#MiCausaEs</h2>
+
+        <div class="cause-items">
+            <div class="cause-card reveal">
+                <h3>Educación</h3>
+                <p>Creemos que la educación es la base para transformar realidades.</p>
+            </div>
+
+            <div class="cause-card reveal">
+                <h3>Equidad</h3>
+                <p>Todos los jóvenes merecen las mismas oportunidades.</p>
+            </div>
+
+            <div class="cause-card reveal">
+                <h3>Compromiso social</h3>
+                <p>Trabajamos por una Bogotá con más acceso al conocimiento.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA BOGOTÁ -->
+    <section class="section map reveal">
+        <h2>Estamos en Bogotá</h2>
+
+        <img src="img/mapa_bogota.png" alt="Mapa de Bogotá" class="map-image" onclick="openModal()">
+    </section>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Localidades</h3>
+            <ul>
+                <li>Suba</li>
+                <li>Engativá</li>
+                <li>Bosa</li>
+                <li>Kennedy</li>
+                <li>Ciudad Bolívar</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

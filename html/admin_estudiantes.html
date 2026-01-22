@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador | Estudiantes</title>
+
+    <link rel="stylesheet" href="../css/admin_estudiantes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <h2>Admin</h2>
+    <nav>
+        <a href="admin.html">📊 Simulacros</a>
+        <a href="admin_estudiantes.html" class="active">👨‍🎓 Estudiantes</a>
+        <a href="admin_grupo_preguntas.html">📝 Grupos de preguntas</a>
+        <a href="admin_funciones_admin.html">⚙️ Funciones admin</a>
+        <a href="#">✉️ Enviar resultados</a>
+    </nav>
+</aside>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- HEADER -->
+    <header class="admin-header">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <h1>Panel de Estudiantes</h1>
+    </header>
+
+    <!-- TABLA -->
+    <section class="admin-section">
+        <h2>Estudiantes registrados</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Código</th>
+                        <th>Año</th>
+                        <th>Grado</th>
+                        <th>Salón</th>
+                        <th>Estudiante</th>
+                        <th>Correo</th>
+                        <th>Activo</th>
+                        <th>Último acceso</th>
+                        <th>Resultados</th>
+                        <th>Ver</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>PF-001</td>
+                        <td>2026</td>
+                        <td>11°</td>
+                        <td>1102</td>
+                        <td>Juan Pérez</td>
+                        <td>juan@mail.com</td>
+                        <td class="active">Sí</td>
+                        <td>2026-01-20</td>
+                        <td>Disponible</td>
+                        <td><button class="btn-view">📊</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>PF-002</td>
+                        <td>2026</td>
+                        <td>10°</td>
+                        <td>1001</td>
+                        <td>Ana Torres</td>
+                        <td>ana@mail.com</td>
+                        <td class="inactive">No</td>
+                        <td>2026-01-10</td>
+                        <td>Pendiente</td>
+                        <td><button class="btn-view">📊</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- GRAFICAS -->
+    <section class="admin-section">
+        <h2>Estadísticas generales</h2>
+
+        <div class="charts-grid">
+            <div class="chart-box"><canvas id="radarGeneral"></canvas></div>
+            <div class="chart-box"><canvas id="radarMaterias"></canvas></div>
+            <div class="chart-box"><canvas id="pieActivos"></canvas></div>
+            <div class="chart-box"><canvas id="barGrados"></canvas></div>
+        </div>
+    </section>
+
+</div>
+
+<script src="../js/admin_estudiantes.js"></script>
+</body>
+</html>

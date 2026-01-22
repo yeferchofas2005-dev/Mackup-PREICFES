@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador | Funciones</title>
+
+    <link rel="stylesheet" href="../css/admin_funciones_admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <h2>Admin</h2>
+    <nav>
+        <a href="admin.html">📊 Simulacros</a>
+        <a href="admin_estudiantes.html">👨‍🎓 Estudiantes</a>
+        <a href="admin_grupo_preguntas.html">📝 Grupos de preguntas</a>
+        <a href="admin_funciones_admin.html" class="active">⚙️ Funciones admin</a>
+        <a href="#">✉️ Enviar resultados</a>
+    </nav>
+</aside>
+
+<div class="main">
+
+<header class="admin-header">
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <h1>Funciones del administrador</h1>
+</header>
+
+<!-- PERÍODO ACADÉMICO -->
+<section class="admin-section">
+    <h2>📅 Períodos académicos</h2>
+
+    <div class="card-grid">
+        <div class="card">
+            <label>Período activo</label>
+            <select>
+                <option>2026 - Primer semestre</option>
+                <option>2025 - Segundo semestre</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <label>Crear nuevo período</label>
+            <input type="text" placeholder="Ej: 2026 - Segundo semestre">
+            <button class="btn-primary">Crear período</button>
+        </div>
+    </div>
+</section>
+
+<!-- REGLAS DE SIMULACROS -->
+<section class="admin-section">
+    <h2>🧠 Reglas de simulacros</h2>
+
+    <div class="card-grid">
+        <div class="card">
+            <label>Intentos permitidos</label>
+            <input type="number" value="1">
+        </div>
+
+        <div class="card">
+            <label>Tiempo máximo por simulacro</label>
+            <input type="text" value="4 horas">
+        </div>
+
+        <div class="card">
+            <label>Permitir repetir simulacro</label>
+            <select>
+                <option>No</option>
+                <option>Sí</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <label>Salir del simulacro finaliza intento</label>
+            <select>
+                <option>Sí</option>
+                <option>No</option>
+            </select>
+        </div>
+    </div>
+</section>
+
+<!-- VISIBILIDAD DE RESULTADOS -->
+<section class="admin-section">
+    <h2>📊 Resultados y visibilidad</h2>
+
+    <div class="card-grid">
+        <div class="card">
+            <label>Mostrar respuestas correctas</label>
+            <select>
+                <option>Después del cierre</option>
+                <option>Inmediatamente</option>
+                <option>Nunca</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <label>Mostrar promedio del grupo</label>
+            <select>
+                <option>Sí</option>
+                <option>No</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <label>Permitir descarga de PDF</label>
+            <select>
+                <option>Sí</option>
+                <option>No</option>
+            </select>
+        </div>
+    </div>
+</section>
+
+<!-- CUENTAS ADMIN -->
+<section class="admin-section">
+    <h2>👥 Gestión administrativa</h2>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Rol</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>admin@colegio.edu</td>
+                    <td>Administrador</td>
+                    <td class="active">Activo</td>
+                    <td><button class="btn-secondary">Editar</button></td>
+                </tr>
+                <tr>
+                    <td>docente@colegio.edu</td>
+                    <td>Docente</td>
+                    <td class="active">Activo</td>
+                    <td><button class="btn-secondary">Editar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<div>
+    <!-- SEGURIDAD -->
+    <section class="admin-section">
+        <h2>🔐 Seguridad y control</h2>
+
+        <div class="card-grid">
+
+            <!-- CAMBIAR CONTRASEÑA -->
+            <div class="card">
+                <h3>Cambiar contraseña</h3>
+
+                <label>Id usuario</label>
+                <input type="text" id="currentPassword">
+
+                <label>Nueva contraseña</label>
+                <input type="password" id="newPassword">
+
+                <label>Confirmar nueva contraseña</label>
+                <input type="password" id="confirmPassword">
+
+                <button class="btn-primary" onclick="changePassword()">
+                    Actualizar contraseña
+                </button>
+            </div>
+
+            <!-- CERRAR SESIONES -->
+            <div class="card">
+                <h3>Sesiones activas</h3>
+                <p>Cierra todas las sesiones activas del sistema.</p>
+                <button class="btn-warning" onclick="closeSessions()">
+                    Cerrar todas las sesiones
+                </button>
+            </div>
+
+            <!-- BLOQUEAR USUARIO -->
+            <div class="card">
+                <h3>Bloquear usuario</h3>
+                <label>Código del estudiante</label>
+                <input type="text" id="blockUserCode" placeholder="Ej: PF-023">
+                <button class="btn-danger" onclick="blockUser()">
+                    Bloquear usuario
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<script src="../js/admin_funciones_admin.js"></script>
+</body>
+</html>

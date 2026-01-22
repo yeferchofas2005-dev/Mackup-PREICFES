@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador | Grupos de Preguntas</title>
+
+    <link rel="stylesheet" href="../css/admin_grupo_preguntas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <h2>Admin</h2>
+    <nav>
+        <a href="admin.html">📊 Simulacros</a>
+        <a href="admin_estudiantes.html">👨‍🎓 Estudiantes</a>
+        <a href="admin_grupo_preguntas.html" class="active">📝 Grupos de preguntas</a>
+        <a href="admin_funciones_admin.html">⚙️ Funciones admin</a>
+        <a href="#">✉️ Enviar resultados</a>
+    </nav>
+</aside>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- HEADER -->
+    <header class="admin-header">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <h1>Grupos de preguntas</h1>
+        <button class="btn-primary" onclick="openModal()">+ Crear grupo</button>
+    </header>
+
+    <!-- TABLA -->
+    <section class="admin-section">
+        <h2>Listado de grupos</h2>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del grupo</th>
+                        <th>PDFs asociados</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Grupo de preguntas 1</td>
+                        <td>3</td>
+                        <td>
+                            <button class="btn-view" onclick="verPreguntas()">📄 Ver preguntas</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Grupo de preguntas 2</td>
+                        <td>5</td>
+                        <td>
+                            <button class="btn-view" onclick="verPreguntas()">📄 Ver preguntas</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Crear grupo de preguntas</h3>
+
+        <input type="text" placeholder="Nombre del grupo">
+
+        <label class="file-label">
+            Seleccionar PDFs
+            <input type="file" multiple accept="application/pdf">
+        </label>
+
+        <button class="btn-primary full">Guardar grupo</button>
+    </div>
+</div>
+
+<script src="../js/admin_grupo_preguntas.js"></script>
+</body>
+</html>

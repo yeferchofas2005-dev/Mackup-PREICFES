@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #1f2a63;
+}
+
+/* ======================
+   NAVBAR
+====================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(31, 42, 99, 0.95);
+    z-index: 999;
+    padding: 15px 8%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    width: 60px;
+}
+
+.nav-buttons a {
+    margin-left: 15px;
+    text-decoration: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-login {
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-login:hover {
+    background: white;
+    color: #1f2a63;
+}
+
+.btn-register {
+    background: #f4c430;
+    color: #1f2a63;
+}
+
+.btn-register:hover {
+    background: #ffd95a;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #1f2a63, #2f5fd0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.hero-content {
+    animation: heroFade 1.2s ease forwards;
+}
+
+.logo {
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 32px;
+    background-color: #f4c430;
+    color: #1f2a63;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #ffd95a;
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* ABOUT */
+.about p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 1.1rem;
+}
+
+/* INSTAGRAM */
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.instagram-grid img {
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram-grid img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* CAUSE */
+.cause {
+    background-color: #ffffff;
+}
+
+.cause-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.cause-card {
+    background: #f5f7fa;
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cause-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.cause-card h3 {
+    margin-bottom: 10px;
+    color: #2f5fd0;
+}
+
+/* MAP */
+.map-image {
+    width: 80%;
+    max-width: 600px;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.map-image:hover {
+    transform: scale(1.03);
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ANIMACIONES */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes heroFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

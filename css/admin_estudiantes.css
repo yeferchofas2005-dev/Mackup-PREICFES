@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f7fa;
+    color: #1f2a63;
+}
+
+/* OVERLAY */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 900;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: #1f2a63;
+    color: white;
+    min-height: 100vh;
+    padding: 30px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sidebar nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #2f5fd0;
+}
+
+/* MAIN */
+.main {
+    margin-left: 260px;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.admin-header {
+    background: white;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.hamburger {
+    font-size: 26px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+/* SECTIONS */
+.admin-section {
+    padding: 40px 8%;
+}
+
+.admin-section h2 {
+    margin-bottom: 20px;
+}
+
+/* TABLE */
+.table-container {
+    background: white;
+    border-radius: 15px;
+    overflow-x: auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 14px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+th {
+    background: #2f5fd0;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f5f7fa;
+}
+
+.active {
+    color: green;
+    font-weight: 600;
+}
+
+.inactive {
+    color: red;
+    font-weight: 600;
+}
+
+.btn-view {
+    background: #2f5fd0;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* CHARTS */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.chart-box {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    height: 320px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .overlay.show {
+        display: block;
+    }
+
+    .main {
+        margin-left: 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}

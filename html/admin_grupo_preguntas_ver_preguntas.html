@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Administrador | Ver Preguntas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../css/admin_grupo_preguntas_ver_preguntas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <h2>Admin</h2>
+    <nav>
+        <a href="admin.html">📊 Simulacros</a>
+        <a href="admin_estudiantes.html">👨‍🎓 Estudiantes</a>
+        <a href="admin_grupo_preguntas.html" class="active">📝 Grupos de preguntas</a>
+        <a href="admin_funciones_admin.html">⚙️ Funciones admin</a>
+        <a href="#">✉️ Enviar resultados</a>
+    </nav>
+</aside>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- HEADER -->
+    <header class="admin-header">
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <h1>Preguntas del grupo</h1>
+        <a href="admin_grupo_preguntas.html" class="btn-back">← Volver</a>
+    </header>
+
+    <!-- LISTADO -->
+    <section class="questions-section">
+
+        <!-- PREGUNTA -->
+        <article class="question-card">
+            <h3>Pregunta 1</h3>
+            <p class="question-text">
+                ¿Cuál es el resultado de la siguiente operación matemática?
+            </p>
+
+            <ul class="options">
+                <li>A. 12</li>
+                <li>B. 14</li>
+                <li class="correct">C. 16</li>
+                <li>D. 18</li>
+            </ul>
+
+            <span class="tag">Matemáticas</span>
+        </article>
+
+        <!-- PREGUNTA -->
+        <article class="question-card">
+            <h3>Pregunta 2</h3>
+            <p class="question-text">
+                Según el texto, ¿cuál es la idea principal del segundo párrafo?
+            </p>
+
+            <ul class="options">
+                <li>A. Un ejemplo histórico</li>
+                <li class="correct">B. La tesis central del autor</li>
+                <li>C. Una opinión secundaria</li>
+                <li>D. Una conclusión implícita</li>
+            </ul>
+
+            <span class="tag">Lectura Crítica</span>
+        </article>
+
+        <!-- PREGUNTA -->
+        <article class="question-card">
+            <h3>Pregunta 3</h3>
+            <p class="question-text">
+                ¿Qué consecuencia directa tiene el fenómeno descrito?
+            </p>
+
+            <ul class="options">
+                <li>A. Aumento de temperatura</li>
+                <li>B. Disminución de lluvias</li>
+                <li class="correct">C. Alteración del ecosistema</li>
+                <li>D. Migración humana</li>
+            </ul>
+
+            <span class="tag">Ciencias Naturales</span>
+        </article>
+
+    </section>
+</div>
+
+<script src="../js/admin_grupo_preguntas_ver_preguntas.js"></script>
+</body>
+</html>
