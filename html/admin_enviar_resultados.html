@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Enviar Resultados | Administrador</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/admin_enviar_resultados.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+    <h2>Enviar Resultados</h2>
+</header>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+    <h2>Admin</h2>
+    <nav>
+        <a href="admin.html">📊 Simulacros</a>
+        <a href="admin_estudiantes.html">👨‍🎓 Estudiantes</a>
+        <a href="admin_grupo_preguntas.html">📝 Grupos de preguntas</a>
+        <a href="admin_funciones_admin.html">⚙️ Funciones admin</a>
+        <a href="admin_enviar_resultados.html"  class="active">✉️ Enviar resultados</a>
+    </nav>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+    <!-- ACCIONES -->
+    <section class="actions">
+        <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="Buscar por nombre, ID o correo..."
+            onkeyup="filterStudents()"
+        >
+
+        <div class="action-buttons">
+            <button class="btn-primary" onclick="sendAllResults()">
+                <i class="fas fa-envelope"></i> Enviar a todos
+            </button>
+
+            <button class="btn-secondary" onclick="exportAllPDF()">
+                <i class="fas fa-file-pdf"></i> Generar PDFs
+            </button>
+        </div>
+    </section>
+
+    <!-- TABLA -->
+    <section class="table-container">
+        <table id="studentsTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Último Simulacro</th>
+                    <th>Promedio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Juan Pérez</td>
+                    <td>juan@email.com</td>
+                    <td>Simulacro 3</td>
+                    <td>72</td>
+                    <td>
+                        <button class="btn-warning" onclick="sendResult(101)">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <button class="btn-danger" onclick="exportPDF(101)">
+                            <i class="fas fa-file-pdf"></i>
+                        </button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>102</td>
+                    <td>Ana Gómez</td>
+                    <td>ana@email.com</td>
+                    <td>Simulacro 3</td>
+                    <td>81</td>
+                    <td>
+                        <button class="btn-warning" onclick="sendResult(102)">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                        <button class="btn-danger" onclick="exportPDF(102)">
+                            <i class="fas fa-file-pdf"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<script src="../js/admin_enviar_resultados.js"></script>
+</body>
+</html>
